@@ -1,0 +1,19 @@
+[project]
+name = "mcp-workspace-server"
+version = "0.1.0"
+description = "A safe, structured MCP server for local workspace access."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.0.0"
+]
+
+[project.scripts]
+mcp-workspace-server = "mcp_workspace_server.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_workspace_server"]
